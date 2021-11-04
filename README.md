@@ -187,8 +187,19 @@ Vendedor: Persona encargada de la venta de combustible
     Proceso: Debe contemplar requerimientos de confiabilidad y consistencia de los componentes de negocio ante recuperaciones. En caso de fallas de algún componente, no debe haber pérdida de información.
 
     Salida:  Sistemas de backup, recuperación y log de transacciones.
+    
+## BackLog: Jira
 
 
+![1](https://user-images.githubusercontent.com/93439713/140425489-5c027d17-96eb-4ce3-8271-ae70077a765d.PNG)
+
+![2](https://user-images.githubusercontent.com/93439713/140425731-04705358-1f36-4145-8bf5-85606888f5c5.PNG)
+
+![3](https://user-images.githubusercontent.com/93439713/140425767-f845eff2-b5f9-45b4-adc5-1edb8f724374.PNG)
+
+![4](https://user-images.githubusercontent.com/93439713/140425836-7cc1a15d-52e8-4f4c-8c0f-d54c31b7eb61.PNG)
+
+![5](https://user-images.githubusercontent.com/93439713/140425888-0a1a16f7-d485-4a49-8925-88ce1daadef2.PNG)
 
 
 
