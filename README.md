@@ -201,5 +201,15 @@ Vendedor: Persona encargada de la venta de combustible
 
 ![5](https://user-images.githubusercontent.com/93439713/140425888-0a1a16f7-d485-4a49-8925-88ce1daadef2.PNG)
 
+# SPRINT 2
 
+  ## Diagrama de Clases
+
+![Diagrama de clases](https://user-images.githubusercontent.com/93439713/141865636-5298c2cc-23e1-4e8e-9909-b488bf8357ff.JPG)
+
+  ## Instalacion de programas
+  
+  A continuación Link del folder compartido donde podemos encontrar los screenshots de los diferentes integrantes del grupo:
+  
+  https://drive.google.com/drive/folders/1mCmFMqwo2IhDCbQrmazun7ipoAD2IzU9
 
