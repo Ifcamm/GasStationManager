@@ -1,0 +1,11 @@
+Chicos a continuación les comparto algunos comentarios con respecto al sprint 1, este feedback no afecta la nota del sprint:
+
+1. El readme por defecto de angular no se ve atractivo en el readme de su proyecto. Les sugiero eliminar toda esa parte.
+
+2. Recuerden que el objetivo debe tener un enfoque comercial, para ello hay una estrategia muy sencilla que le da un cambio completo, no debe comenzar con un verbo en infinitivo como nos enseñaron en la universidad, todo lo contrario, debería comenzar con el nombre del proyecto y luego todos los verbos conjugados algo así:
+
+"Gass Station Manager es una aplicación web que te permite llevar el registro de las transacciones realizadas en una estación de servicio de forma personalizada, facilitando la recolección y generación de información sobre las ventas"
+
+3. La misión tiene una mejor estructura pero cambiemos esa palabra "este proyecto" o "el proyecto" por el nombre del producto, esto hará un cambio de enfoque en el texto.
+
+4. En Scrum NO EXISTEN LOS REQUERIMIENTOS, sin embargo, en las imagenes donde se evidencia el product backlog, no se visualiza un produc backlog si no una lista de tareas. Por favor refinar ambas cosas y seguir evolucionando para que sean mas claras las necesidades sobre las que estamos trabajando.
