@@ -1,42 +1,16 @@
 # GasStationManager
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.11.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-
 
 # Objetivos y Alcance, Misión del Proyecto
 
 ## Objetivos
-Desarrollar una aplicación web que permita el registro de las transacciones realizadas en
+La aplicacion GasStationmanager tiene como proposito  facilitar el registro de las transacciones realizadas en
 una estación de servicio de forma personalizada, facilitando la recolección y generación de información de ventas.
 
 ## Misión, Alcance
-Por medio de este proyecto se busca diseñar un aplicativo que permita mejorar el proceso de registro de las transacciones de ventas de combustible realizadas en las estaciones de servicio, ayudando así a los administradores de la estación a generar reportes de las ventas realizadas, obteniendo información clave como cual es el combustible más vendido o los días y horas de mayor consumo, de tal forma que con esta información puedan planear una mejor atención al cliente, adicional podrán llevar un registro exacto de las utilidades del negocio
+Por medio de este producto se quiere mejorar el proceso de registro de las transacciones de ventas de combustible realizadas en las estaciones de servicio, ayudando así a los administradores de la estación a generar reportes de las ventas realizadas, obteniendo información clave como cual es el combustible más vendido o los días y horas de mayor consumo, de tal forma que con esta información puedan planear una mejor atención al cliente, adicional podrán llevar un registro exacto de las utilidades del negocio
 
-El proyecto tendrá como alcance generar una interfaz Web que permita el registro de clientes de la estación de servicio, que registrecuanto combustible es comprado por los clientes y al final muestre un reporte de las ventas realizadas en un lapso de tiempo establecido.
+La aplicación Web GasStationmanager permitara el registro de clientes de la estación de servicio, llevando asi un record del combustible comprado por los clientes, permitiendo asi verificar en cualquier momento las ventas realizadas en un lapso de tiempo establecido y generando reportes.
 
 # Roles Centrales del Proyecto
 
