@@ -1,0 +1,14 @@
+section {
+  width: 20%;
+  margin: auto;
+  margin-top: 1rem;
+}
+.mat-form-field {
+  width: 100%;
+}
+
+button {
+  margin-left: 1rem;
+  font-size: 13px;
+  font-weight: 550;
+}
