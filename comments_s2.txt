@@ -1,0 +1,11 @@
+Chicos a continuación les comparto algunos comentarios con respecto al sprint 2:
+
+1. Con respecto al diagrama de clases hay algunas cosas que no son muy claras:
+  a. En el caso del usuario, es para tener un sistema de usuarios? En caso de ser así, creo que haría falta la contraseña.
+  b. No es muy clara la relación de Venta con TipoCombustible dado que esta no es una entidad que se evidencie en el diagrama.
+  c. Entendería que la venta se relacionaría con el cliente, sin embvargo, no se evidencia la relación del cliente.
+  d. El pago tambien estaría relacionado a la venta?
+
+  Por favor chicos, revisemos y refinemos este diagrama para que quede lo mas claro y consiso posible.
+
+2. Se solicitó acceso para evidenciar las capturas de pantalla dado que está privado. Esto preferiblemente debería ser público.
