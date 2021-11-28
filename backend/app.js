@@ -6,6 +6,7 @@ const app = express();
 
 const clientRoutes = require("./routes/clients");
 const userRoutes = require("./routes/users");
+const transactionRoutes = require("./routes/transactions");
 
 // Import de las routes
 
@@ -27,5 +28,6 @@ mongoose
 
 app.use("/api/clients", clientRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/transactions", transactionRoutes);
 
 module.exports = app;

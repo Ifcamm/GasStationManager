@@ -1,7 +1,15 @@
 const bcrypt = require("bcrypt");
-const Transaction = require("../models/transaction");
 const User = require("../models/user");
 
+//metodo para obtener todos los usuarios (GET)
+
+exports.getUsers = (req, res) => {
+  User.find().then((userResult) =>{
+    res.status(200).json(userResult);
+  });
+};
+
+//metodo para crear un nuevo usuario (POST)
 exports.signup = (req, res) => {
     bcrypt.hash(req.body.password, 10).then((hash) => {
       const newUser = new User({
@@ -24,18 +32,16 @@ exports.signup = (req, res) => {
     });
   };
 
-exports.transaction = (req, res) => {
-    const newTransaction = Transaction({
-        identification: req.body.identification,
-        fueltype: req.body.plate,
-        paymethod: req.body.paymethod,
-        amount: req.body.amount,
-    });
+//metodo para eliminar un usuarios (DELETE)
 
-    newTransaction.save().then((result) => {
-        res.status(201).json({ message: "Transacción registrada" });
-      })
-      .catch((err) => {
-        res.status(500).json({ error: err });
-      })
-}
+exports.deleteUser = (req, res) => {
+  User.deleteOne({ _id: req.params.id }).then((result) =>{
+    if(result.deletedCount>0){
+      res.status(200).json({message: 'Usuario eliminado'});
+    } else {
+      res.status(200).json({message: 'Usuario no encontrado'});
+    }
+  });
+};
+
+//metodo para actualizar un usuario (PUT) - NO INCLUYE CAMBIO DE PASSWORD
