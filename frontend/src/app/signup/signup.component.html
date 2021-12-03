@@ -1,0 +1,91 @@
+<mat-card>
+  <form (submit)="onSignup(userForm)" #userForm="ngForm">
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Identification</mat-label>
+        <input
+          matInput
+          [ngModel]="user.identification"
+          #identification="ngModel"
+          name="identification"
+          required
+        />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input
+          matInput
+          [ngModel]="user.name"
+          #name="ngModel"
+          name="name"
+          required
+        />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Last name</mat-label>
+        <input
+          matInput
+          [ngModel]="user.lastName"
+          #lastName="ngModel"
+          name="lastName"
+          required
+        />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>E-mail</mat-label>
+        <input
+          matInput
+          [ngModel]="user.email"
+          #email="ngModel"
+          name="email"
+          required
+          type="email"
+          email
+        />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Phone number</mat-label>
+        <input
+          matInput
+          [ngModel]="user.phoneNumber"
+          #phoneNumber="ngModel"
+          name="phoneNumber"
+          required
+        />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Enter your password</mat-label>
+        <input
+          matInput
+          [ngModel]="user.password"
+          #password="ngModel"
+          name="password"
+          required
+          [type]="hide ? 'password' : 'text'"
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+    <div>
+      <button mat-raised-button color="primary">Sign up</button>
+    </div>
+  </form>
+</mat-card>
