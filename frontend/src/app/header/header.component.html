@@ -17,6 +17,7 @@
         routerLink="/"
         routerLinkActive="mat-accent"
         *ngIf="isLogin === true"
+        (click)="onLogout()"
         >Logout</a
       >
       <a

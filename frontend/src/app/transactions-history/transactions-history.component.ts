@@ -30,19 +30,24 @@ export class TransactionsHistoryComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.isAuth = this.userService.getIsAuthenticated();
+    this.onLogin(this.isAuth);
     this.authSub = this.userService
       .getAuthStatusListener()
       .subscribe((authStatus: boolean) => {
         this.isAuth = authStatus;
-        if (authStatus === true) {
-          this.transactionService.getTransactions();
-          this.transactionsSub = this.transactionService
-            .getTransactionsUpdatedListener()
-            .subscribe((transactions: Transaction[]) => {
-              this.transactions = transactions;
-            });
-        }
+        this.onLogin(authStatus);
       });
+  }
+
+  onLogin(authStatus: boolean) {
+    if (authStatus === true) {
+      this.transactionService.getTransactions();
+      this.transactionsSub = this.transactionService
+        .getTransactionsUpdatedListener()
+        .subscribe((transactions: Transaction[]) => {
+          this.transactions = transactions;
+        });
+    }
   }
 
   ngOnDestroy(): void {
