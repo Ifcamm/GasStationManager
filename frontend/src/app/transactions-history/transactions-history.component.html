@@ -1,0 +1,22 @@
+<!-- <p class="p-m-t" *ngIf="transaction.length === 0">No se han agregado posts</p> -->
+
+<mat-card *ngFor="let item of transactions">
+  <mat-card-title>{{ item.identification }}</mat-card-title>
+  <mat-card-subtitle>{{ item.fueltype }}</mat-card-subtitle>
+  <mat-card-subtitle>{{ item.paymethod }}</mat-card-subtitle>
+  <mat-card-subtitle>{{ item.amount }}</mat-card-subtitle>
+  <mat-card-subtitle>{{ item.price }}</mat-card-subtitle>
+
+  <mat-card-actions align="end" *ngIf="isAuth === true">
+    <!-- <button
+      mat-stroked-button
+      color="primary"
+      [routerLink]="['/edit', item._id]"
+    >
+      EDITAR
+    </button> -->
+    <!-- <button mat-button color="warn" (click)="onDelete(item.id)">
+      ELIMINAR
+    </button> -->
+  </mat-card-actions>
+</mat-card>

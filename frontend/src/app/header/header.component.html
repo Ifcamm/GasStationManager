@@ -1,0 +1,38 @@
+<mat-toolbar color="primary">
+  <span>
+    <a routerLink="/">GAS STATION MANAGER</a>
+  </span>
+  <span class="spacer"></span>
+  <ul>
+    <li>
+      <a
+        mat-button
+        routerLink="/add"
+        routerLinkActive="mat-accent"
+        *ngIf="isLogin === true"
+        >Add transaction</a
+      >
+      <a
+        mat-button
+        routerLink="/"
+        routerLinkActive="mat-accent"
+        *ngIf="isLogin === true"
+        >Logout</a
+      >
+      <a
+        mat-button
+        routerLink="/login"
+        routerLinkActive="mat-accent"
+        *ngIf="isLogin === false"
+        >Login</a
+      >
+      <a
+        mat-button
+        routerLink="/signup"
+        routerLinkActive="mat-accent"
+        *ngIf="isLogin === false"
+        >Sign up</a
+      >
+    </li>
+  </ul>
+</mat-toolbar>

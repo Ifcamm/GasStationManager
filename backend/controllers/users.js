@@ -1,5 +1,6 @@
 const bcrypt = require("bcrypt");
 const User = require("../models/user");
+const jwt = require("jsonwebtoken");
 
 //metodo para obtener todos los usuarios (GET)
 
@@ -42,6 +43,38 @@ exports.deleteUser = (req, res) => {
 			res.status(200).json({ message: "Usuario no encontrado" });
 		}
 	});
+};
+
+exports.login = (req, res) => {
+	let userGet;
+	User.findOne({ identification: req.body.identification })
+		.then((user) => {
+			if (!user) {
+				return;
+			}
+			userGet = user;
+			return bcrypt.compare(req.body.password, user.password);
+		})
+		.then((result) => {
+			if (!result) {
+				return res.status(401).json({ message: "Failed authentication" });
+			}
+			const token = jwt.sign(
+				{
+					identification: userGet.identification,
+					userId: userGet._id,
+				},
+				"MisionTIC2021_Secret_Token_GSM",
+				{ expiresIn: "1h" }
+			);
+
+			res.status(200).json({ token: token });
+
+			// res.status(200).json({ message: "Successful authentication" });
+		})
+		.catch((err) => {
+			return res.status(401).json({ message: "Failed authentication" });
+		});
 };
 
 //metodo para actualizar un usuario (PUT) - NO INCLUYE CAMBIO DE PASSWORD

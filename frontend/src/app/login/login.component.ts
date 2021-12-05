@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { User } from 'src/app/models/user.model';
+import { UserService } from '../services/user/user.service';
 
 @Component({
   selector: 'app-login',
@@ -21,8 +23,15 @@ export class LoginComponent implements OnInit {
     password: '',
   };
 
-  constructor() {}
+  constructor(public userService: UserService) {}
 
   ngOnInit(): void {}
-  click() {}
+
+  onLogin(form: NgForm) {
+    if (form.invalid) {
+      return;
+    }
+
+    this.userService.login(form.value.identification, form.value.password);
+  }
 }

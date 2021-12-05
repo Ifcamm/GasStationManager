@@ -8,6 +8,7 @@ router.get("", usersController.getUsers);
 
 router.post("/signup", usersController.signup);
 router.post("/transaction", transactionsController.newTransaction);
+router.post("/login", usersController.login);
 
 router.delete("/:id", usersController.deleteUser);
 
