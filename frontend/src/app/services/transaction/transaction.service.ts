@@ -20,7 +20,7 @@ export class TransactionService {
       .post(`${this.url}/users/transaction`, transaction)
       .subscribe((response) => {
         console.log(response);
-        // this.router.navigate(['/index']);
+        this.router.navigate(['/']);
       });
   }
 

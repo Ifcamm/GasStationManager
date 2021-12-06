@@ -20,6 +20,7 @@ import { HeaderComponent } from './header/header.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { TransactionsHistoryComponent } from './transactions-history/transactions-history.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { AuthInterceptor } from './auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatToolbarModule,
     MatDialogModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
