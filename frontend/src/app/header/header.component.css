@@ -12,3 +12,11 @@ a {
 .spacer {
   flex: 1 1 auto;
 }
+
+.mat-toolbar.mat-primary {
+  background: rgba(11, 219, 11, 0.001); /*  10% opaque green */
+  border-bottom: 2px solid #ff4800;
+}
+#username {
+  text-transform: capitalize;
+}

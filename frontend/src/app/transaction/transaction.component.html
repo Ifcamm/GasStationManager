@@ -15,25 +15,21 @@
     <div>
       <mat-form-field appearance="fill">
         <mat-label>Fuel type</mat-label>
-        <input
-          matInput
-          [ngModel]="transaction.fueltype"
-          #fueltype="ngModel"
-          name="fueltype"
-          required
-        />
+        <mat-select [ngModel]="transaction.fueltype" required name="fueltype">
+          <mat-option value="Diesel">Diesel</mat-option>
+          <mat-option value="Premium">Premium</mat-option>
+          <mat-option value="Regular">Regular</mat-option>
+        </mat-select>
       </mat-form-field>
     </div>
     <div>
       <mat-form-field appearance="fill">
         <mat-label>Pay method</mat-label>
-        <input
-          matInput
-          [ngModel]="transaction.paymethod"
-          #paymethod="ngModel"
-          name="paymethod"
-          required
-        />
+        <mat-select [ngModel]="transaction.paymethod" required name="paymethod">
+          <mat-option value="Cash">Cash</mat-option>
+          <mat-option value="Credit card">Credit card</mat-option>
+          <mat-option value="Credit card">Debit card</mat-option>
+        </mat-select>
       </mat-form-field>
     </div>
     <div>
@@ -61,7 +57,7 @@
       </mat-form-field>
     </div>
     <div>
-      <button mat-raised-button color="primary">Enter</button>
+      <button mat-raised-button color="primary">Generate</button>
     </div>
   </form>
 </mat-card>

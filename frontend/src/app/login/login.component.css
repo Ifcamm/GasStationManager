@@ -12,3 +12,9 @@ button {
   font-size: 13px;
   font-weight: 550;
 }
+
+.mat-card {
+  width: 350px;
+  margin: auto;
+  margin-top: 3rem;
+}

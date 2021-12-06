@@ -1,10 +1,11 @@
 <mat-toolbar color="primary">
   <span>
-    <a routerLink="/">GAS STATION MANAGER</a>
+    <a routerLink="/">Gas Station Manager</a>
   </span>
   <span class="spacer"></span>
   <ul>
     <li>
+      <a mat-button id="username" style="color: #18b0d6">{{ username }}</a>
       <a
         mat-button
         routerLink="/transaction"
@@ -14,7 +15,14 @@
       >
       <a
         mat-button
-        routerLink="/"
+        routerLink="/signup"
+        routerLinkActive="mat-accent"
+        *ngIf="isLogin === true"
+        >Create admin</a
+      >
+      <a
+        mat-button
+        routerLink="/login"
         routerLinkActive="mat-accent"
         *ngIf="isLogin === true"
         (click)="onLogout()"
@@ -26,13 +34,6 @@
         routerLinkActive="mat-accent"
         *ngIf="isLogin === false"
         >Login</a
-      >
-      <a
-        mat-button
-        routerLink="/signup"
-        routerLinkActive="mat-accent"
-        *ngIf="isLogin === false"
-        >Sign up</a
       >
     </li>
   </ul>

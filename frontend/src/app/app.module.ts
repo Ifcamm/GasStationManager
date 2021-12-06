@@ -21,6 +21,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { TransactionsHistoryComponent } from './transactions-history/transactions-history.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AuthInterceptor } from './auth.interceptor';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { AuthInterceptor } from './auth.interceptor';
     FormsModule,
     MatToolbarModule,
     MatDialogModule,
+    MatSelectModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

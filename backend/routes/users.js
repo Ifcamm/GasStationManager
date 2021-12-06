@@ -6,8 +6,9 @@ const usersController = require("../controllers/users");
 const transactionsController = require("../controllers/transactions");
 
 router.get("", usersController.getUsers);
+router.get("/:id", usersController.getUser);
 
-router.post("/signup", usersController.signup);
+router.post("/signup", checkAuth, usersController.signup);
 router.post("/transaction", checkAuth, transactionsController.newTransaction);
 router.post("/login", usersController.login);
 

@@ -10,6 +10,12 @@ exports.getUsers = (req, res) => {
 	});
 };
 
+exports.getUser = (req, res) => {
+	User.findOne().then((userResult) => {
+		res.status(200).json(userResult);
+	});
+};
+
 //metodo para crear un nuevo usuario (POST)
 exports.signup = (req, res) => {
 	bcrypt.hash(req.body.password, 10).then((hash) => {
@@ -68,7 +74,9 @@ exports.login = (req, res) => {
 				{ expiresIn: "1h" }
 			);
 
-			res.status(200).json({ token: token, expiresIn: 3600 });
+			res
+				.status(200)
+				.json({ token: token, expiresIn: 3600, userId: userGet._id });
 
 			// res.status(200).json({ message: "Successful authentication" });
 		})
