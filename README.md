@@ -186,22 +186,4 @@ Vendedor: Persona encargada de la venta de combustible
   A continuación Link del folder compartido donde podemos encontrar los screenshots de los diferentes integrantes del grupo:
   
   https://drive.google.com/drive/folders/1mCmFMqwo2IhDCbQrmazun7ipoAD2IzU9
-  
-  # SPRINT 4 FRONTEND
-  
-  WIREFRAMES:
-  
-  1. PAGINA DE INICIO
-  
-  ![Pagina de Inicio 1](https://user-images.githubusercontent.com/93439713/144850994-b408fc30-f298-4cf0-923a-c97368c347b1.jpg)
-  
-  2. PAGINA DE TRANSACCIONES
-  
-  ![Pagina de Transacciones](https://user-images.githubusercontent.com/93439713/144851065-bc78595f-f3bd-4c02-b801-5edbef55896e.jpg)
-  
-  3. PAGINA DE USUARIOS
 
-  ![Pagina de Usuarios](https://user-images.githubusercontent.com/93439713/144851095-88d2a2a4-e8c9-4169-9aa9-59b95bd0456f.jpg)
-
-
-  
