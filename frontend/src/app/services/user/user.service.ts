@@ -68,6 +68,7 @@ export class UserService {
 
   logout() {
     this.token = '';
+    this.userId = '';
     this.isAuthenticated = false;
     this.authStatusListener.next(false);
     this.clearAuthData();
@@ -85,6 +86,9 @@ export class UserService {
     if (expiresIn > 0) {
       this.token = localStorage.getItem('token')!;
       this.userId = localStorage.getItem('userId')!;
+      console.log('user');
+      console.log(this.userId);
+      console.log('user');
       this.isAuthenticated = true;
       this.setAuthTimer(expiresIn / 1000);
       this.authStatusListener.next(true);
@@ -100,6 +104,7 @@ export class UserService {
   private clearAuthData() {
     localStorage.removeItem('token');
     localStorage.removeItem('expiration');
+    localStorage.removeItem('userId');
   }
 
   private saveAuthData(token: string, userId: string, expirationDate: Date) {
@@ -118,8 +123,8 @@ export class UserService {
     }
     return {
       token: token,
-      expirationDate: expirationDate,
       userId: userId,
+      expirationDate: expirationDate,
     };
   }
 

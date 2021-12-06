@@ -11,8 +11,9 @@ exports.getUsers = (req, res) => {
 };
 
 exports.getUser = (req, res) => {
-	User.findOne().then((userResult) => {
+	User.findById(req.params.id).then((userResult) => {
 		res.status(200).json(userResult);
+		console.log(userResult);
 	});
 };
 

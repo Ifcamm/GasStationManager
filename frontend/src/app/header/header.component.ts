@@ -19,12 +19,10 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.isLogin = this.userService.getIsAuthenticated();
     this.userId = this.userService.getUserId();
-    console.log('aquipasa');
-    console.log(this.userId);
-    console.log('aquitermina');
 
     this.userService.getUser(this.userId).subscribe((user) => {
       this.username = user.name;
+      console.log(user.name);
     });
 
     this.authListenerSub = this.userService
@@ -35,9 +33,6 @@ export class HeaderComponent implements OnInit {
 
         this.userService.getUser(this.userId).subscribe((user) => {
           this.username = user.name;
-          console.log('aquipasa2');
-          console.log(user);
-          console.log('aquitermina2');
         });
       });
   }
