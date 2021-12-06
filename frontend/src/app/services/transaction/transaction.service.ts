@@ -56,6 +56,16 @@ export class TransactionService {
         this.transactionUpdated.next([...this.transactions]);
       });
   }
+
+  deleteTransaction(id: string){
+    this.http.delete(`${this.url}/transactions/${id}`).subscribe((response) =>{
+      console.log(response);
+      const transactionsFiltered = this.transactions.filter((transaction) => transaction.id != id);
+      this.transactions = transactionsFiltered;
+      this.transactionUpdated.next([...this.transactions]);
+    })
+  }
+
   getTransactionsUpdatedListener() {
     return this.transactionUpdated.asObservable();
   }

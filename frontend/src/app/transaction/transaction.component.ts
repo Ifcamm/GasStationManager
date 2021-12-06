@@ -11,6 +11,7 @@ import { UserService } from '../services/user/user.service';
 })
 export class TransactionComponent implements OnInit {
   transaction: Transaction = {
+    id: '',
     identification: '',
     fueltype: '',
     paymethod: '',

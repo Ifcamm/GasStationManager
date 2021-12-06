@@ -1,7 +1,8 @@
 export interface Transaction {
-  identification: String;
-  fueltype: String;
-  paymethod: String;
-  amount: String;
-  price: String;
+  id: string;
+  identification: string;
+  fueltype: string;
+  paymethod: string;
+  amount: string;
+  price: string;
 }
