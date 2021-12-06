@@ -53,4 +53,9 @@ export class TransactionsHistoryComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.transactionsSub.unsubscribe();
   }
+
+  onDelete(id: string){
+    console.log(id);
+    this.transactionService.deleteTransaction(id);
+  }
 }
