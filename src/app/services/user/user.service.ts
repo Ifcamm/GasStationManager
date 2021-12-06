@@ -4,12 +4,14 @@ import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 
 import { User } from 'src/app/models/user.model';
+import { environment } from 'src/environments/environment.prod';
+
+const url = environment.apiUrl + '/users';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  url = 'http://localhost:3000/api/users';
   private token: string = '';
   private isAuthenticated: boolean = false;
   private authStatusListener = new Subject<boolean>();
@@ -18,7 +20,7 @@ export class UserService {
   constructor(private router: Router, private http: HttpClient) {}
 
   createUser(user: User) {
-    this.http.post(`${this.url}/signup`, user).subscribe((response) => {
+    this.http.post(`${url}/signup`, user).subscribe((response) => {
       console.log(response);
       this.router.navigate(['/login']);
     });
@@ -27,7 +29,7 @@ export class UserService {
   login(identification: string, password: string) {
     this.http
       .post<{ token: string; expiresIn: number; userId: string }>(
-        `${this.url}/login`,
+        `${url}/login`,
         {
           identification,
           password,
@@ -129,7 +131,7 @@ export class UserService {
   }
 
   getUser(userId: string) {
-    return this.http.get<{ name: string }>(`${this.url}/${userId}`);
+    return this.http.get<{ name: string }>(`${url}/${userId}`);
   }
   getUserId() {
     return this.userId;

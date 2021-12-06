@@ -5,11 +5,14 @@ import { Transaction } from 'src/app/models/user.transaction';
 import { map } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 
+import { environment } from 'src/environments/environment.prod';
+
+const url = environment.apiUrl;
+
 @Injectable({
   providedIn: 'root',
 })
 export class TransactionService {
-  url = 'http://localhost:3000/api';
   transactions: Transaction[] = [];
   transactionUpdated = new Subject<Transaction[]>();
 
@@ -17,7 +20,7 @@ export class TransactionService {
 
   createTransaction(transaction: Transaction) {
     this.http
-      .post(`${this.url}/users/transaction`, transaction)
+      .post(`${url}/users/transaction`, transaction)
       .subscribe((response) => {
         console.log(response);
         this.router.navigate(['/']);
@@ -26,7 +29,7 @@ export class TransactionService {
 
   getTransactions() {
     this.http
-      .get<any>(`${this.url}/transactions`)
+      .get<any>(`${url}/transactions`)
       .pipe(
         map((transactionsData) => {
           return transactionsData.map(
@@ -57,13 +60,15 @@ export class TransactionService {
       });
   }
 
-  deleteTransaction(id: string){
-    this.http.delete(`${this.url}/transactions/${id}`).subscribe((response) =>{
+  deleteTransaction(id: string) {
+    this.http.delete(`${url}/transactions/${id}`).subscribe((response) => {
       console.log(response);
-      const transactionsFiltered = this.transactions.filter((transaction) => transaction.id != id);
+      const transactionsFiltered = this.transactions.filter(
+        (transaction) => transaction.id != id
+      );
       this.transactions = transactionsFiltered;
       this.transactionUpdated.next([...this.transactions]);
-    })
+    });
   }
 
   getTransactionsUpdatedListener() {
