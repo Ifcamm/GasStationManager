@@ -1,0 +1,23 @@
+mat-form-field,
+input {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+mat-card {
+  margin-top: 1rem;
+  margin: auto;
+  width: 15%;
+}
+
+mat-raised-button {
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  align-content: center;
+}
+
+.mat-raised-button {
+  width: 100%;
+  height: 100%;
+}

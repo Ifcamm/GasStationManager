@@ -1,5 +1,21 @@
-<!-- <p class="p-m-t" *ngIf="transaction.length === 0">No se han agregado posts</p> -->
+<mat-card *ngFor="let item of transactionsById">
+  <mat-card-title>Identification: {{ item.identification }}</mat-card-title>
+  <mat-card-subtitle>Fuel type: {{ item.fueltype }}</mat-card-subtitle>
+  <mat-card-subtitle>Payment method: {{ item.paymethod }}</mat-card-subtitle>
+  <mat-card-subtitle>Amount: {{ item.amount }} gal.</mat-card-subtitle>
+  <mat-card-subtitle>Price: ${{ item.price }}</mat-card-subtitle>
 
+  <mat-card-actions align="end">
+    <button
+      mat-raised-button
+      color="warn"
+      (click)="onDelete(item.id)"
+      *ngIf="userRole !== 'client'"
+    >
+      ELIMINAR
+    </button>
+  </mat-card-actions>
+</mat-card>
 <mat-card *ngFor="let item of transactions">
   <mat-card-title>Identification: {{ item.identification }}</mat-card-title>
   <mat-card-subtitle>Fuel type: {{ item.fueltype }}</mat-card-subtitle>

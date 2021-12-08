@@ -5,4 +5,5 @@ export interface User {
   identification: String;
   phoneNumber: String;
   password: String;
+  role: String;
 }

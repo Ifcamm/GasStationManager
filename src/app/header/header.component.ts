@@ -10,6 +10,7 @@ import { UserService } from '../services/user/user.service';
 })
 export class HeaderComponent implements OnInit {
   isLogin = false;
+  userRole = '';
   private authListenerSub!: Subscription;
   username = '';
   userId = '';
@@ -19,6 +20,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.isLogin = this.userService.getIsAuthenticated();
     this.userId = this.userService.getUserId();
+    this.userRole = this.userService.getUserRole();
 
     this.userService.getUser(this.userId).subscribe((user) => {
       this.username = user.name;
@@ -30,6 +32,7 @@ export class HeaderComponent implements OnInit {
       .subscribe((authStatus) => {
         this.isLogin = authStatus;
         this.userId = this.userService.getUserId();
+        this.userRole = this.userService.getUserRole();
 
         this.userService.getUser(this.userId).subscribe((user) => {
           this.username = user.name;

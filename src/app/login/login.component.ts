@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
     identification: '',
     phoneNumber: '',
     password: '',
+    role: '',
   };
 
   constructor(public userService: UserService) {}

@@ -4,11 +4,11 @@ import { User } from '../models/user.model';
 import { UserService } from '../services/user/user.service';
 
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css'],
+  selector: 'app-create-user',
+  templateUrl: './create-user.component.html',
+  styleUrls: ['./create-user.component.css'],
 })
-export class SignupComponent implements OnInit {
+export class CreateUserComponent implements OnInit {
   hide = true;
 
   user: User = {
@@ -18,7 +18,7 @@ export class SignupComponent implements OnInit {
     identification: '',
     phoneNumber: '',
     password: '',
-    role: 'client',
+    role: '',
   };
 
   constructor(public userService: UserService) {}

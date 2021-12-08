@@ -22,6 +22,7 @@ import { TransactionsHistoryComponent } from './transactions-history/transaction
 import { MatDialogModule } from '@angular/material/dialog';
 import { AuthInterceptor } from './auth.interceptor';
 import { MatSelectModule } from '@angular/material/select';
+import { CreateUserComponent } from './create-user/create-user.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { MatSelectModule } from '@angular/material/select';
     TransactionComponent,
     HeaderComponent,
     TransactionsHistoryComponent,
+    CreateUserComponent,
   ],
   imports: [
     BrowserModule,

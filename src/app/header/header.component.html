@@ -10,14 +10,14 @@
         mat-button
         routerLink="/transaction"
         routerLinkActive="mat-accent"
-        *ngIf="isLogin === true"
+        *ngIf="isLogin === true && userRole === 'user'"
         >Add transaction</a
       >
       <a
         mat-button
-        routerLink="/signup"
+        routerLink="/createuser"
         routerLinkActive="mat-accent"
-        *ngIf="isLogin === true"
+        *ngIf="isLogin === true && userRole === 'superuser'"
         >Create admin</a
       >
       <a
@@ -34,6 +34,13 @@
         routerLinkActive="mat-accent"
         *ngIf="isLogin === false"
         >Login</a
+      >
+      <a
+        mat-button
+        routerLink="/signup"
+        routerLinkActive="mat-accent"
+        *ngIf="isLogin === false"
+        >Sign up</a
       >
     </li>
   </ul>
