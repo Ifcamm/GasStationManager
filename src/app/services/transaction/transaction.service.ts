@@ -22,7 +22,7 @@ export class TransactionService {
 
   createTransaction(transaction: Transaction) {
     this.http
-      .post(`http://localhost:3000/api/users/transaction`, transaction)
+      .post(`${url}/users/transaction`, transaction)
       .subscribe((response) => {
         this.router.navigate(['/']);
       });
@@ -30,7 +30,7 @@ export class TransactionService {
 
   getTransactions() {
     this.http
-      .get<any>(`http://localhost:3000/api/transactions`)
+      .get<any>(`${url}/transactions`)
       .pipe(
         map((transactionsData) => {
           return transactionsData.map(
@@ -62,7 +62,7 @@ export class TransactionService {
 
   getTransactionsById(idClient: string) {
     this.http
-      .get<any>(`http://localhost:3000/api/transactions/${idClient}`)
+      .get<any>(`${url}/transactions/${idClient}`)
       .pipe(
         map((transactionsData) => {
           return transactionsData.map(
@@ -87,22 +87,19 @@ export class TransactionService {
         })
       )
       .subscribe((response) => {
-        console.log(response);
         this.transactionsById = response;
         this.transactionsByIdUpdated.next([...this.transactionsById]);
       });
   }
 
   deleteTransaction(id: string) {
-    this.http
-      .delete(`http://localhost:3000/api/transactions/${id}`)
-      .subscribe((response) => {
-        const transactionsFiltered = this.transactions.filter(
-          (transaction) => transaction.id != id
-        );
-        this.transactions = transactionsFiltered;
-        this.transactionUpdated.next([...this.transactions]);
-      });
+    this.http.delete(`${url}/transactions/${id}`).subscribe((response) => {
+      const transactionsFiltered = this.transactions.filter(
+        (transaction) => transaction.id != id
+      );
+      this.transactions = transactionsFiltered;
+      this.transactionUpdated.next([...this.transactions]);
+    });
   }
 
   getTransactionsUpdatedListener() {
