@@ -7,7 +7,7 @@ import { Subject } from 'rxjs';
 
 import { environment } from 'src/environments/environment.prod';
 
-const url = environment.apiUrl;
+const url = environment.apiUrl + '/transactions';
 
 @Injectable({
   providedIn: 'root',
@@ -22,7 +22,7 @@ export class TransactionService {
 
   createTransaction(transaction: Transaction) {
     this.http
-      .post(`${url}/transaction/newtransaction`, transaction)
+      .post(`${url}/newtransaction`, transaction)
       .subscribe((response) => {
         this.router.navigate(['/']);
       });
@@ -30,7 +30,7 @@ export class TransactionService {
 
   getTransactions() {
     this.http
-      .get<any>(`${url}/transactions`)
+      .get<any>(`${url}`)
       .pipe(
         map((transactionsData) => {
           return transactionsData.map(
@@ -62,7 +62,7 @@ export class TransactionService {
 
   getTransactionsById(idClient: string) {
     this.http
-      .get<any>(`${url}/transactions/${idClient}`)
+      .get<any>(`${url}/${idClient}`)
       .pipe(
         map((transactionsData) => {
           return transactionsData.map(
@@ -93,7 +93,7 @@ export class TransactionService {
   }
 
   deleteTransaction(id: string) {
-    this.http.delete(`${url}/transactions/${id}`).subscribe((response) => {
+    this.http.delete(`${url}/${id}`).subscribe((response) => {
       const transactionsFiltered = this.transactions.filter(
         (transaction) => transaction.id != id
       );
