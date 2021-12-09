@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'createuser', component: CreateUserComponent },
-  { path: 'transaction', component: TransactionComponent },
+  { path: 'newtransaction', component: TransactionComponent },
   { path: '', component: TransactionsHistoryComponent },
 ];
 
