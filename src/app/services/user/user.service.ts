@@ -27,6 +27,12 @@ export class UserService {
     });
   }
 
+  signup(user: User) {
+    this.http.post(`${url}/signup`, user).subscribe((response) => {
+      this.router.navigate(['/login']);
+    });
+  }
+
   login(identification: string, password: string) {
     this.identification = identification;
     this.http
