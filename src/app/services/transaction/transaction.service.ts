@@ -22,7 +22,7 @@ export class TransactionService {
 
   createTransaction(transaction: Transaction) {
     this.http
-      .post(`${url}/users/transaction`, transaction)
+      .post(`${url}/transaction/newtransaction`, transaction)
       .subscribe((response) => {
         this.router.navigate(['/']);
       });

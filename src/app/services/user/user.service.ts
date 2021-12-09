@@ -23,7 +23,7 @@ export class UserService {
 
   createUser(user: User) {
     this.http.post(`${url}/createuser`, user).subscribe((response) => {
-      this.router.navigate(['/login']);
+      this.router.navigate(['/']);
     });
   }
 
