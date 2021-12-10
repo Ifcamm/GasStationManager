@@ -6,7 +6,7 @@ ul {
 }
 a {
   text-decoration: none;
-  color: white;
+  color: rgba(204, 204, 204, 0.904);
 }
 
 .spacer {
@@ -14,9 +14,14 @@ a {
 }
 
 .mat-toolbar.mat-primary {
-  background: rgba(11, 219, 11, 0.001); /*  10% opaque green */
-  border-bottom: 2px solid #ff4800;
+  background: rgb(51, 51, 51); /*  10% opaque green */
+  border-bottom: 2px solid #3f51b5;
 }
 #username {
   text-transform: capitalize;
+}
+.mat-button.mat-accent,
+.mat-icon-button.mat-accent,
+.mat-stroked-button.mat-accent {
+  color: rgb(230, 228, 228);
 }

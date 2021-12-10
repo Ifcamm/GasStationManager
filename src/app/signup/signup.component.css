@@ -5,8 +5,8 @@ input {
 }
 
 mat-card {
-  margin-top: 1rem;
   margin: auto;
+  margin-top: 2rem;
   width: 15%;
 }
 

@@ -23,7 +23,7 @@ export class UserService {
 
   createUser(user: User) {
     this.http.post(`${url}/createuser`, user).subscribe((response) => {
-      this.router.navigate(['/']);
+      this.router.navigate(['/user']);
     });
   }
 
@@ -49,6 +49,9 @@ export class UserService {
         this.token = response.token;
         this.userId = response.userId;
         this.userRole = response.userRole;
+        if (this.userRole === 'client') {
+          this.router.navigate(['/client']);
+        } else this.router.navigate(['/user']);
 
         if (this.token !== '') {
           const expirationInSeconds = response.expiresIn;
@@ -67,8 +70,6 @@ export class UserService {
             this.identification
           );
         }
-
-        this.router.navigate(['/']);
       });
   }
 

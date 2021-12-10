@@ -1,6 +1,9 @@
 <mat-toolbar color="primary">
-  <span>
-    <a routerLink="/">Gas Station Manager</a>
+  <span *ngIf="userRole === 'client'">
+    <a routerLink="/client">Gas Station Manager</a>
+  </span>
+  <span *ngIf="userRole !== 'client'">
+    <a routerLink="/user">Gas Station Manager</a>
   </span>
   <span class="spacer"></span>
   <ul>

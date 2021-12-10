@@ -24,7 +24,7 @@ export class TransactionService {
     this.http
       .post(`${url}/newtransaction`, transaction)
       .subscribe((response) => {
-        this.router.navigate(['/']);
+        this.router.navigate(['/user']);
       });
   }
 
@@ -56,7 +56,7 @@ export class TransactionService {
       )
       .subscribe((response) => {
         this.transactions = response;
-        this.transactionUpdated.next([...this.transactions]);
+        this.transactionUpdated.next([...this.transactions].reverse());
       });
   }
 
@@ -88,7 +88,7 @@ export class TransactionService {
       )
       .subscribe((response) => {
         this.transactionsById = response;
-        this.transactionsByIdUpdated.next([...this.transactionsById]);
+        this.transactionsByIdUpdated.next([...this.transactionsById].reverse());
       });
   }
 

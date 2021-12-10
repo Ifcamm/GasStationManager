@@ -10,7 +10,7 @@ import { UserService } from '../services/user/user.service';
 })
 export class LoginComponent implements OnInit {
   hide = true;
-  errorMessage = 'Este campo es requerido.';
+  errorMessage = 'Field required.';
   private isEditing = false;
   private postId!: string;
 

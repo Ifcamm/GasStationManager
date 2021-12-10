@@ -23,6 +23,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { AuthInterceptor } from './auth.interceptor';
 import { MatSelectModule } from '@angular/material/select';
 import { CreateUserComponent } from './create-user/create-user.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { TransactionHistoryClientComponent } from './transaction-history-client/transaction-history-client.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,7 @@ import { CreateUserComponent } from './create-user/create-user.component';
     HeaderComponent,
     TransactionsHistoryComponent,
     CreateUserComponent,
+    TransactionHistoryClientComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +52,8 @@ import { CreateUserComponent } from './create-user/create-user.component';
     MatToolbarModule,
     MatDialogModule,
     MatSelectModule,
+    MatPaginatorModule,
+    MatTableModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
