@@ -11,6 +11,27 @@
       <a mat-button id="username" style="color: #18b0d6">{{ username }}</a>
       <a
         mat-button
+        routerLink="/allclients"
+        routerLinkActive="mat-accent"
+        *ngIf="isLogin === true && userRole === 'superuser'"
+        >Client list</a
+      >
+      <a
+        mat-button
+        routerLink="/allusers"
+        routerLinkActive="mat-accent"
+        *ngIf="isLogin === true && userRole === 'superuser'"
+        >User list</a
+      >
+      <a
+        mat-button
+        routerLink="/user"
+        routerLinkActive="mat-accent"
+        *ngIf="isLogin === true && userRole === 'superuser'"
+        >Transaction history</a
+      >
+      <a
+        mat-button
         routerLink="/newtransaction"
         routerLinkActive="mat-accent"
         *ngIf="isLogin === true && userRole === 'user'"
@@ -21,7 +42,7 @@
         routerLink="/createuser"
         routerLinkActive="mat-accent"
         *ngIf="isLogin === true && userRole === 'superuser'"
-        >Create admin</a
+        >Create user</a
       >
       <a
         mat-button

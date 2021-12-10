@@ -26,6 +26,8 @@ import { CreateUserComponent } from './create-user/create-user.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { TransactionHistoryClientComponent } from './transaction-history-client/transaction-history-client.component';
+import { UsersListComponent } from './users-list/users-list.component';
+import { ClientListComponent } from './client-list/client-list.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import { TransactionHistoryClientComponent } from './transaction-history-client/
     TransactionsHistoryComponent,
     CreateUserComponent,
     TransactionHistoryClientComponent,
+    UsersListComponent,
+    ClientListComponent,
   ],
   imports: [
     BrowserModule,

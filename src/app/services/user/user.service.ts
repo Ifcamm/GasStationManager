@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import { User } from 'src/app/models/user.model';
 import { environment } from 'src/environments/environment.prod';
@@ -18,12 +19,14 @@ export class UserService {
   private userId: string = '';
   private userRole: string = '';
   private identification: string = '';
+  users: User[] = [];
+  userUpdated = new Subject<User[]>();
 
   constructor(private router: Router, private http: HttpClient) {}
 
   createUser(user: User) {
     this.http.post(`${url}/createuser`, user).subscribe((response) => {
-      this.router.navigate(['/user']);
+      this.router.navigate(['/allusers']);
     });
   }
 
@@ -174,5 +177,43 @@ export class UserService {
   }
   getIdentification() {
     return this.identification;
+  }
+
+  getUsers(direccion: string) {
+    this.http
+      .get<any>(`${url}/${direccion}`)
+      .pipe(
+        map((usersData) => {
+          return usersData.map(
+            (user: {
+              _id: string;
+              name: string;
+              lastName: string;
+              email: string;
+              identification: string;
+              phoneNumber: string;
+              role: string;
+            }) => {
+              return {
+                _id: user._id,
+                name: user.name,
+                lastName: user.lastName,
+                email: user.email,
+                identification: user.identification,
+                phoneNumber: user.phoneNumber,
+                role: user.role,
+              };
+            }
+          );
+        })
+      )
+      .subscribe((response) => {
+        this.users = response;
+        this.userUpdated.next([...this.users].reverse());
+      });
+  }
+
+  getusersUpdatedListener() {
+    return this.userUpdated.asObservable();
   }
 }

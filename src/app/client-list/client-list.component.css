@@ -1,0 +1,23 @@
+.mat-card {
+  margin-top: 1rem;
+}
+.mat-card-title {
+  margin-bottom: 1rem;
+}
+
+table {
+  width: 100%;
+  background-color: rgba(240, 248, 255, 0);
+}
+.mat-raised-button {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  min-width: 20px;
+  height: 30px;
+  margin-top: 2.5%;
+  text-align: center;
+}
+.mat-paginator {
+  background: rgba(240, 248, 255, 0.5);
+}

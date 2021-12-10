@@ -23,8 +23,6 @@ export class TransactionsHistoryComponent implements OnInit, OnDestroy {
   authSub!: Subscription;
   dataSource: any;
 
-  // @ViewChild(MatPaginator) paginator: MatPaginator;
-
   columnsToDisplay = [
     'identification',
     'paymethod',
